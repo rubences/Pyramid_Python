@@ -5,10 +5,11 @@ from pyramid.view import view_config
 
 
 @view_config(
-    route_name='home'
+    route_name='home',
+    request_method='POST'
 )
 def home(request):
-    return Response('Code Combat!')
+    return Response('Welcome!')
 
 if __name__ == '__main__':
     with Configurator() as config:
