@@ -1,15 +1,14 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
-from pyramid.response import Response
 from pyramid.view import view_config
 
 
 @view_config(
     route_name='home',
-    request_method='POST'
+    renderer='json'
 )
 def home(request):
-    return Response('Welcome!')
+    return {"a": 1, "b": 2}
 
 if __name__ == '__main__':
     with Configurator() as config:
